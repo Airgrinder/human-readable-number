@@ -17,10 +17,10 @@ module.exports = function toReadable(number) {
     } else if (number <= 999) {
         if (!!!+number.toString().slice(2, 3) && !!!+number.toString().slice(1, 2)) {
             return result = count[0][parseInt(number.toString().slice(0, 1))] + ' hundred'
-        } else if (number.toString().slice(1, 3) >= 10 && number.toString().slice(1, 3) <= 19) {
-            return result = count[0][parseInt(number.toString().slice(0, 1))] + ' hundred ' + count[1][parseInt(number.toString().slice(2, 3))]
         } else if (number.toString().slice(1, 3) <= 9) {
             return result = count[0][parseInt(number.toString().slice(0, 1))] + ' hundred ' + count[0][parseInt(number.toString().slice(2, 3))]
+        } else if (number.toString().slice(1, 3) <= 19) {
+            return result = count[0][parseInt(number.toString().slice(0, 1))] + ' hundred ' + count[1][parseInt(number.toString().slice(2, 3))]
         } else if (+number.toString().slice(2, 3) === 0) {
             return result = count[0][parseInt(number.toString().slice(0, 1))] + ' hundred ' + count[2][parseInt(number.toString().slice(1, 2))]
         } else {
